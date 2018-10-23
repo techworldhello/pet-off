@@ -1,0 +1,58 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Asap', sans-serif;
+}
+
+body {
+	background-color: #FF8C69;
+	text-align: center;
+/*	background-image: url("http://cdn.onlinewebfonts.com/svg/img_74607.png");*/
+}
+
+.sign-in, .upload, .upload_images {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 0 auto;
+	width: 20%;
+	font-size: 22px;
+}
+
+.email-input, .password-input, .pet-name, .species, .media, .next-btn {
+	margin: .7em;
+}
+
+.sign-in-btn {
+	width: 30%;
+	margin: 0 auto;
+	margin-top: 2em;
+}
+
+.options > a {
+	display: flex;
+	flex-direction: column;
+	font-size: 44px;
+	text-decoration: none;
+	margin: 50px;
+	color: white;
+}
+
+.media-upload-btn {
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 2em;
+}
+
+.animal-show > img {
+	height: 2em;
+	width: 2em;
+}
+
+footer {
+	color: white;
+	font-size: 24px;
+    width: 100%;
+    position:fixed;
+    bottom: 10em;
+}
+

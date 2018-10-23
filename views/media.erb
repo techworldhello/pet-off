@@ -1,0 +1,12 @@
+<form class="upload_images" action="/user/media" method="post">
+	<input type="hidden" name="animal_id" value="<%= @animal_id %>">
+	<label class="media">Add an image </label>
+	<input name="image" type="text">
+	<button class="media-upload-btn">Make them famous</button>
+</form>
+
+<div class="user-uploads">
+	<% @upload.each do |img| %>
+	<img src="<%= img.image %>" alt="">
+	<% end %>
+</div>

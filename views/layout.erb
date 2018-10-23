@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Off</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+</head>
+<body>
+	<img src="/images/logo.png">
+
+
+  	<%= yield %>
+	
+	<footer>	
+		<p>Wall of fame</p>
+		<%=Time.now.strftime("%I:%M:%S%P")%>
+		
+ 	<!-- popular images appear across the bottom of page at all times -->
+	</footer>
+
+</body>
+</html>

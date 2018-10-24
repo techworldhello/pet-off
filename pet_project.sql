@@ -5,9 +5,11 @@ CREATE DATABASE pet_project;
 # one pic to many likes 
 
 CREATE TABLE animals(
+	user_id INTEGER,
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(5000) NOT NULL,
-	species VARCHAR(5000) NOT NULL
+	species VARCHAR(5000) NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
 
 CREATE TABLE media(
@@ -15,6 +17,10 @@ CREATE TABLE media(
 	image TEXT NOT NULL,
 	FOREIGN KEY (animal_id) REFERENCES animals (id) ON DELETE CASCADE
 );
+
+SELECT id FROM animal INNER JOIN media ON animals.id = media.animal_id;
+
+-- only show images frmo animal_with_image, also record animal_id??
 
 -- put the below in ruby
 CONSTRAINT chk_media CHECK (image_url IS NOT NULL OR video_url IS NOT NULL)

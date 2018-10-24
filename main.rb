@@ -22,8 +22,8 @@ helpers do
 	def calc_time seconds 
 		limit = Time.now + seconds * 60
 		while Time.now < limit
-			sleep 1
 			elapse = limit - Time.now
+			sleep 1
 		end
 	end 
 
@@ -43,24 +43,63 @@ post '/session' do
 	end 
 end 
 
+get '/signup' do
+	@user = User.new
+	erb :signup
+end 
+
+post '/signup' do
+	user = User.new
+	user.email = params[:email]
+	user.password = params[:password]
+	user.save
+	redirect '/'
+end 
+
 get '/options' do
 	erb :options
+end 
+
+get '/about' do
+	erb :about
+end 
+
+get '/account' do
+	erb :account
+end 
+
+get '/account/:id/edit' do
+ #get the animal id to know who we are editing
+	erb :edit
+end 
+
+post '/account/:id' do
+
+	redirect to ('/account')
+end 
+
+delete '/account/:id' do
+ #get the animal id to know who we are deleting
+	erb :edit
 end 
 
 # => ANIMAL OPTION
 
 # get all animal images
 get '/animals' do
-	@animals = Animal.all
+	@animals = Animal.all.sample(2)
+	@media = @animals.map do |animal|
+			animal.media[0]
+	end
 	erb :animals
 end 
 
 # submit selected image
 post '/animals' do
+	image = Medium.new 
 
+	redirect to("/animals")
 end 
-
-
 
 # => USER OPTION
 
@@ -71,9 +110,11 @@ end
 
 # user submit pet info
 post '/user' do
+	redirect to('/login?') unless logged_in?
 	animal = Animal.new
 	animal.name = params[:name]
 	animal.species = params[:species]
+	animal.user_id = current_user.id
 	animal.save
 	redirect to("/user/media?animal_id=#{animal.id}")
 end 
@@ -88,6 +129,7 @@ end
 post '/user/media' do
 	upload = Medium.new
 	upload.image = params[:image]
+	upload.animal_id = params[:animal_id]
 	upload.save
 	redirect to('/user')
 end

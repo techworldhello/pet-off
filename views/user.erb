@@ -1,10 +1,12 @@
-<a href="/">log out</a><span style="color: white;"> | </span>
-<a href="/animals">I want to pet a creature</a> 
+<a class="logout" href="/">log out</a><span style="color: white;"> | </span>
+<a href="/account" class="account">My account</a><span style="color: white;"> | </span>
+<a class="pet_creature" href="/animals">Pet a creature</a>
 
-<h1>Hello *current user* </h1>
+
+<h1>Hello <%= current_user.email %> </h1>
 
 <form class="upload" action="/user" method="post">
-	<p>Tell us about your pet</p>
+	<p>Your pet info</p>
 	<label class="pet-name">Name</label>
 	<input name="name" type="text">
 

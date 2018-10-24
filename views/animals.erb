@@ -1,13 +1,19 @@
 <a href="/options">Go back</a> 
 <h1>Go on, pet one</h1>
 
-<form class='animal-show' action="">
-	<img src="<% Medium.get_media %>" alt="">
-</form>
+<div class='animal-show'>
+	<form action="post">
+		<input type="hidden" name="animal_id" value="<%= @media[0].animal_id %>">
+		<img src="<%= @media[0].image %>" alt="pet">
+		<button>This one</button>
+	</form>
 
-<form class='animal-show' action="">
-	<img src="<% Medium.get_media %>" alt="">
-</form>
+	<form action="post">
+		<input type="hidden" name="animal_id" value="<%= @media[1].animal_id %>">
+		<img src="<%= @media[1].image %>" alt="pet">
+		<button>This one</button>
+	</form>
+</div>
 
 
 <!-- selected image needs to store in selection array to keep track of animal's popularity  -->

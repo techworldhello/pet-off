@@ -4,10 +4,26 @@
 }
 
 body {
-	background-color: #FF8C69;
+	background-color: #C0C0C0;
 	text-align: center;
 /*	background-image: url("http://cdn.onlinewebfonts.com/svg/img_74607.png");*/
 }
+
+.logo {
+    position: absolute;
+    top: 1em;
+    left: 2em;
+    width: 130px;
+    height: 130px;
+}
+
+.about {
+	text-decoration: none;
+	position: absolute;
+    top: 1em;
+    right: 5em;
+}
+
 
 .sign-in, .upload, .upload_images {
 	display: flex;
@@ -18,22 +34,41 @@ body {
 	font-size: 22px;
 }
 
-.email-input, .password-input, .pet-name, .species, .media, .next-btn {
+.signup {
+	margin-top: 3em;
+}
+
+.back, .account, .pet_creature, .logout {
+	text-decoration: none;
+}
+
+.email-input, .password-input, .pet-name, .species, .media {
 	margin: .7em;
 }
 
-.sign-in-btn {
-	width: 30%;
+.next-btn {
+	height: 2em;
+	width: 5em;
+	text-align: center;
+	border-radius: 10px;
 	margin: 0 auto;
 	margin-top: 2em;
+}
+
+.sign-in-btn {
+	width: 6em;
+	margin: 0 auto;
+	margin-top: 2em;
+	height: 2em;
+	border-radius: 10px;
 }
 
 .options > a {
 	display: flex;
 	flex-direction: column;
-	font-size: 44px;
+	font-size: 40px;
 	text-decoration: none;
-	margin: 50px;
+	margin: 80px;
 	color: white;
 }
 
@@ -43,9 +78,27 @@ body {
 	margin-top: 2em;
 }
 
-.animal-show > img {
-	height: 2em;
-	width: 2em;
+.animal-show, .account_imgs {
+	display: flex;
+	margin-top: 6em;
+}
+
+.account_btn_arrange {
+	display: flex;
+	flex-direction: column;
+}
+
+.account_btn_arrange > img {
+	border-radius: 10px;
+	height: 10em;
+	width: 10em;
+}
+
+.animal-show > form > img {
+	height: 15em;
+	width: 15em;
+	border-radius: 10px;
+	text-align: center;
 }
 
 footer {
@@ -54,5 +107,17 @@ footer {
     width: 100%;
     position:fixed;
     bottom: 10em;
+}
+
+.popular {
+	border-radius: 50%;
+	height: 9em;
+	width: 9em;
+}
+
+.popular_images {
+	margin-right: 50px;
+	position: absolute;
+    bottom: 3em;
 }
 

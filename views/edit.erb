@@ -1,0 +1,14 @@
+<a href="/" class="back">Go back</a>
+<h1>Edit</h1>
+
+<form action="/account" method="post">
+	<input type="hidden" name="_method" value="put">
+
+	<label for="">Pet name</label>
+	<input name="pet_name" type="text" value="<%=  %>">
+
+	<label for="">Image url</label>
+	<input name="image_url" type="text" value="<%=  %>">
+
+	<button>Update</button>
+</form>

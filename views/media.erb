@@ -4,9 +4,3 @@
 	<input name="image" type="text">
 	<button class="media-upload-btn">Make them famous</button>
 </form>
-
-<div class="user-uploads">
-	<% @upload.each do |img| %>
-	<img src="<%= img.image %>" alt="">
-	<% end %>
-</div>

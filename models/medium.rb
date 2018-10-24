@@ -6,8 +6,9 @@ class Medium < ActiveRecord::Base
     has_many :users, :through => :likes
 
     def get_media
-        return image.split(' ').shuffle.slice(-2, 2) 
+        @images = self.pluck(:image)
     end 
+
     # store the selected media in a selected array
 end 
 

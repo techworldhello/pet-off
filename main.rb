@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader' 
+# require 'sinatra/reloader' 
 require 'pry'
 
 require_relative 'db_config'
@@ -148,12 +148,6 @@ post '/user/media' do
 	upload.save
 	redirect to('/user')
 end
-
-
-
-
-
-
 
 
 

@@ -2,18 +2,13 @@
 <h1>Go on, pet one</h1>
 
 <div class='animal-show'>
-	<form action="post">
+	<form class="option" action="/likes" method="post">
 		<input type="hidden" name="animal_id" value="<%= @media[0].animal_id %>">
-		<img src="<%= @media[0].image %>" alt="pet">
-		<button>This one</button>
+		<img style="cursor: pointer;" class="display-img" src="<%= @media[0].image %>" alt="pet">
 	</form>
 
-	<form action="post">
+	<form class="option" action="/likes" method="post">
 		<input type="hidden" name="animal_id" value="<%= @media[1].animal_id %>">
-		<img src="<%= @media[1].image %>" alt="pet">
-		<button>This one</button>
+		<img style="cursor: pointer;" class="display-img" src="<%= @media[1].image %>" alt="pet">
 	</form>
 </div>
-
-
-<!-- selected image needs to store in selection array to keep track of animal's popularity  -->

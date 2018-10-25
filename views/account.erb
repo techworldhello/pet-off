@@ -2,23 +2,25 @@
 <a href="/animals" class="pet_creature">Pet a creature</a> 
 
 <h1>Your current uploaded pics</h1>
+<p>Click on an image to edit</p>
 
 <div class="account_imgs">
 	<% current_user.animals.each do |animal| %>
-		<% animal.media.each do |upload| %>
 		<div class="account_btn_arrange">
-			<img src="<%= upload.image %>" alt="">
-			<form action="/account/<%= upload.animal_id %>/edit" method="post">
-				<input type="hidden" name="_method" value="put">
-				<input type="hidden" name="image_id" value="<%= upload.animal_id %>">
-				<button>edit</button>
-			</form>
-			<form action="/account/<%= upload.animal_id %>" method="post">
+			<p style="color: white;"><%= animal.name %></p>
+			<form action="/account/<%= animal.id %>/delete" method="post">
 				<input type="hidden" name="_method" value="delete">
-				<input type="hidden" name="image_id" value="<%= upload.animal_id %>">
-				<button>delete</button>
+				<input type="submit" value="Delete">
+			</form>
+		<% animal.media.each do |upload| %>
+			<form action="/account/<%= upload.animal_id %>/edit">
+				<img class="image-edit" src="<%= upload.image %>" alt="">
 			</form>
 		</div>
 		<% end %>
 	<% end %>
 </div>
+
+
+
+

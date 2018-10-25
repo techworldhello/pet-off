@@ -7,20 +7,18 @@
   <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
 </head>
 <body>
-	<img class="logo" src="/images/logo.png">
-
+	<form action="/animals">
+		<img style="cursor: pointer;" class="logo" src="/images/logo.png">
+	</form>
 
   	<%= yield %>
 	
 	<footer>	
-		<p>Wall of fame</p>
-		<%=Time.now.strftime("%I:%M:%S%P")%>
+		<p>Wall of Fame @ <%=Time.now.strftime("%I:%M:%S%P")%></p>
+		<div class="timer"></div>
 	</footer>
 	<div class="popular_images">
-		<% Medium.all.first(5).each do |animal|%>
-			<img class="popular" src="<%= animal.image %>" alt="popular">
-		<% end %>
-	</div>
+		</div>
 	<script src="/javascripts/application.js"></script>
 </body>
 </html>

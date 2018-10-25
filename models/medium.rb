@@ -4,11 +4,5 @@ class Medium < ActiveRecord::Base
     belongs_to :animals
     # one medium to users who liked it
     has_many :users, :through => :likes
-
-    def get_media
-        @images = self.pluck(:image)
-    end 
-
-    # store the selected media in a selected array
 end 
 

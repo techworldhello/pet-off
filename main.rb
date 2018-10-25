@@ -64,23 +64,35 @@ get '/about' do
 	erb :about
 end 
 
+# get main acc page
 get '/account' do
 	erb :account
-end 
+end
 
+# get to page to edit
 get '/account/:id/edit' do
- #get the animal id to know who we are editing
+	redirect to('/login?') unless logged_in?
+ 	@animal = Animal.find(params[:id])
 	erb :edit
 end 
 
-post '/account/:id' do
-
+# update edits
+put '/account/:id' do
+	redirect to('/login?') unless logged_in?
+	animal = Animal.find(params[:id])
+	animal.name = params[:pet_name]
+	animal.save
+	upload = Medium.find_by(animal_id: animal)
+	upload.image = params[:image_url]
+	upload.save
 	redirect to ('/account')
 end 
 
-delete '/account/:id' do
- #get the animal id to know who we are deleting
-	erb :edit
+# delete image
+delete '/account/:id/delete' do
+	redirect to('/login?') unless logged_in?
+	Animal.find(params[:id]).destroy
+	redirect to('/account')
 end 
 
 # => ANIMAL OPTION
@@ -94,10 +106,12 @@ get '/animals' do
 	erb :animals
 end 
 
-# submit selected image
-post '/animals' do
-	image = Medium.new 
-
+post '/likes' do 
+	redirect to('/login?') unless logged_in?
+	like = Like.new
+	like.animal_id = params[:animal_id]
+	like.user_id = current_user.id
+	like.save
 	redirect to("/animals")
 end 
 
@@ -127,6 +141,7 @@ end
 
 # user submit pet image
 post '/user/media' do
+	redirect to('/login?') unless logged_in?
 	upload = Medium.new
 	upload.image = params[:image]
 	upload.animal_id = params[:animal_id]

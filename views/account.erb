@@ -13,9 +13,11 @@
 				<input type="submit" value="Delete">
 			</form>
 		<% animal.media.each do |upload| %>
-			<form action="/account/<%= upload.animal_id %>/edit">
-				<img class="image-edit" src="<%= upload.image %>" alt="">
-			</form>
+			<div class="edit_image">
+				<form action="/account/<%= upload.animal_id %>/edit">
+					<img class="image-edit" src="<%= upload.image %>" alt="">
+				</form>
+			</div>
 		</div>
 		<% end %>
 	<% end %>

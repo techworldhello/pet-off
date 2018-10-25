@@ -18,7 +18,11 @@
 		<div class="timer"></div>
 	</footer>
 	<div class="popular_images">
-		</div>
+		<% Like.select(:animal_id, 'COUNT(*)').group(:animal_id).order(count: :desc).limit(5).each do |like| %>
+		<img src="<%= like.animal.media[0].image %>" alt="popular">
+		<% end %>
+	</div>
 	<script src="/javascripts/application.js"></script>
 </body>
 </html>
+

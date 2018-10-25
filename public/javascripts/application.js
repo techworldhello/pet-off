@@ -1,21 +1,26 @@
-imageShow = document.querySelectorAll('.animal-show');
+// Core feature 
+const imageShow = document.querySelectorAll('.animal-show');
 
 imageShow.forEach(image => {
 	image.addEventListener('click', event => {
 		event.target.parentElement.submit();
-	});
+	})
 })
 
-logo = document.querySelector('.logo');
+// Logo to lead users to core feature
+const logo = document.querySelector('.logo');
 
 logo.addEventListener('click', event => {
 	event.target.parentElement.submit();
 })
 
-imageEdit = document.querySelector('.image-edit');
+// Edit button in accounts page
+const imageEdits = document.querySelector('.edit_image');
 
-imageEdit.addEventListener('click', event => {
-	event.target.parentElement.submit();
+imageEdits.forEach(image => {
+	image.addEventListener('click', event => {
+		event.target.parentElement.submit();
+	})
 })
 
 

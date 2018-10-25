@@ -4,7 +4,7 @@
 }
 
 body {
-	background-color: #C0C0C0;
+	background-color: #D3D3D3;
 	text-align: center;
 /*	background-image: url("http://cdn.onlinewebfonts.com/svg/img_74607.png");*/
 }
@@ -24,43 +24,80 @@ body {
     right: 5em;
 }
 
+.about-para {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	width: 40%;
+	font-size: 18px;
+}
 
-.sign-in, .upload, .upload_images {
+form {
+	font-size: 26px;
+}
+
+.sign-in, .upload {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	margin: 0 auto;
 	width: 20%;
-	font-size: 22px;
+	font-size: 26px;
+}
+
+.upload_images {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 3em;
+	width: 20%;
+	font-size: 26px;
 }
 
 .signup {
 	margin-top: 3em;
 }
 
-.back, .account, .pet_creature, .logout {
-	text-decoration: none;
-}
-
-.email-input, .password-input, .pet-name, .species, .media {
-	margin: .7em;
-}
-
-.next-btn {
-	height: 2em;
-	width: 5em;
-	text-align: center;
-	border-radius: 10px;
-	margin: 0 auto;
-	margin-top: 2em;
-}
-
-.sign-in-btn {
+.signup-btn, .sign-in-btn {
 	width: 6em;
 	margin: 0 auto;
 	margin-top: 2em;
 	height: 2em;
 	border-radius: 10px;
+	font-size: 16px;
+	transition: .2s ease;
+}
+
+.signup-btn:hover, .sign-in-btn:hover, .media-upload-btn:hover, .next-btn:hover  {
+	background-color: salmon;
+}
+
+.next-btn, .media-upload-btn {
+	height: 2em;
+	width: 5em;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 2em;
+	font-size: 14px;
+	transition: .2s ease;
+}
+
+.media-upload-btn {
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 2em;
+}
+
+
+.back, .account, .pet_creature, .logout, .sign-up, .about {
+	margin-top: 5em;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.email-input, .password-input, .pet-name, .species, .media {
+	margin: .7em;
 }
 
 .options {
@@ -76,53 +113,56 @@ body {
 	text-decoration: none;
 	margin: 80px;
 	color: white;
+	border: 10px solid #D3D3D3;
+	transition: .2s ease;
 }
 
-.media-upload-btn {
-	width: 60%;
-	margin: 0 auto;
-	margin-top: 2em;
+.options > a:hover {
+	border-color: salmon;
+	padding: 10px;
 }
+
 
 .account_imgs {
 	display: flex;
 	margin: 0 auto;
+	justify-content: space-around;
+	width: 80%;
 }
 
 .image-edit {
-	border-radius: 10px;
-	height: 10em;
-	width: 10em;
-
+	height: 4em;
+	width: 4em;
+	cursor: pointer;
 }
+
+
 .account_btn_arrange {
 	display: flex;
 	flex-direction: column;
 }
 
-
 .animal-show {
-	width: 40em;
+	width: 50em;
 	margin: 0 auto;
-	margin-top: 5em;
+	margin-top: 7em;
 	display: flex;
 	justify-content: space-around;
 }
 
 .animal-show > form > img {
-	border: 10px solid #C0C0C0;
-	height: 15em;
-	width: 15em;
+	height: 10em;
+	width: 10em;
 	border-radius: 10px;
+	transition: .2s ease;
 }
 
 .animal-show > form > img:hover {
-	border-color: salmon;
 	padding: 5px;
 }
 
 footer {
-	color: gold;
+	color: salmon;
 	text-shadow: 10px 10px 40px #aa8d44;
 	font-size: 24px;
     width: 100%;
@@ -130,16 +170,19 @@ footer {
     bottom: 10em;
 }
 
-.popular {
-	border-radius: 50%;
-	height: 9em;
-	width: 9em;
+.popular_images {
+	display: flex;
+	position: absolute;
+	justify-content: space-around;
+	bottom: 4em;
+	width: 100%;
 }
 
-.popular_images {
-	margin-right: 50px;
-	position: absolute;
-    bottom: 3em;
+.popular_images > img {
+	align-self: flex-end;
+	border-radius: 5px 20px 5px;
+	height: 10em;
+	width: 10em;
 }
 
 

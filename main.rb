@@ -1,5 +1,5 @@
 require 'sinatra'
-# require 'sinatra/reloader' 
+require 'sinatra/reloader' 
 require 'pry'
 
 require_relative 'db_config'
@@ -26,7 +26,6 @@ helpers do
 			sleep 1
 		end
 	end 
-
 end 
 
 get '/' do
@@ -71,26 +70,26 @@ end
 
 # get to page to edit
 get '/account/:id/edit' do
-	redirect to('/login?') unless logged_in?
+	redirect to('/') unless logged_in?
  	@animal = Animal.find(params[:id])
 	erb :edit
 end 
 
 # update edits
 put '/account/:id' do
-	redirect to('/login?') unless logged_in?
+	redirect to('/') unless logged_in?
 	animal = Animal.find(params[:id])
-	animal.name = params[:pet_name]
+	animal.name = params[:name]
+	animal.media[0].image = params[:image_url]
+	animal.media[0].save
+	animal.user_id = current_user.id
 	animal.save
-	upload = Medium.find_by(animal_id: animal)
-	upload.image = params[:image_url]
-	upload.save
 	redirect to ('/account')
 end 
 
 # delete image
 delete '/account/:id/delete' do
-	redirect to('/login?') unless logged_in?
+	redirect to('/') unless logged_in?
 	Animal.find(params[:id]).destroy
 	redirect to('/account')
 end 
@@ -107,7 +106,7 @@ get '/animals' do
 end 
 
 post '/likes' do 
-	redirect to('/login?') unless logged_in?
+	redirect to('/') unless logged_in?
 	like = Like.new
 	like.animal_id = params[:animal_id]
 	like.user_id = current_user.id
@@ -124,7 +123,7 @@ end
 
 # user submit pet info
 post '/user' do
-	redirect to('/login?') unless logged_in?
+	redirect to('/') unless logged_in?
 	animal = Animal.new
 	animal.name = params[:name]
 	animal.species = params[:species]
@@ -141,12 +140,26 @@ end
 
 # user submit pet image
 post '/user/media' do
-	redirect to('/login?') unless logged_in?
+	redirect to('/') unless logged_in?
 	upload = Medium.new
 	upload.image = params[:image]
 	upload.animal_id = params[:animal_id]
 	upload.save
-	redirect to('/user')
+	redirect to('/user/media/another')
+end
+
+get '/user/media/another' do
+	@animal_id = params[:animal_id]
+	erb :another_media
+end 
+
+post '/user/media/another' do
+	redirect to('/') unless logged_in?
+	upload = Medium.new
+	upload.image = params[:image]
+	upload.animal_id = params[:animal_id]
+	upload.save
+	redirect to('/user/media/another')
 end
 
 

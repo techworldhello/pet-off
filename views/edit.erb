@@ -1,10 +1,11 @@
 <a href="/" class="back">Go back</a>
 <h1>Edit</h1>
 
-<form action="/account/<%= @animal %>" method="post">
+<form action="/account/<%= @animal.id %>" method="post">
 	<input type="hidden" name="_method" value="put">
-	<input type="text" value="<%= @animal.name %>">
+	<label for="">Name</label>
+	<input name="name" type="text" value="<%= @animal.name %>">
 	<label for="">Image url</label>
-	<input name="image_url" type="text" value="<%= @animal.media.image %>">
+	<input name="image_url" type="text" value="<%= @animal.media[0].image %>">
 	<button>Update</button>
 </form>

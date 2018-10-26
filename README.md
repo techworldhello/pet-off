@@ -18,7 +18,7 @@ A full stack app that aims to display some of the best pet pictures on the inter
 
 ## Database schema
 
-![Screenshot](db_wireframes.png)
+![Screenshot](/images/db_wireframes.png)
 
 ## Challenges
 

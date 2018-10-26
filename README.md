@@ -1,14 +1,14 @@
-#🐱 Pet Off 🐕
+# 🐱 Pet Off 🐕
 
 A full stack app that aims to display some of the best pet pictures on the internet as decided by users. 
 
-##To use
+## To use
 
 1. Sign in or sign up
 2. Select option *pet off* to 'pet' your favourite animal of the 2 generated
 3. Or select *upload* to upload or edit pics of your pet
 
-##Tech stack
+## Tech stack
 
 * Ruby 
 * Sinatra 
@@ -16,13 +16,13 @@ A full stack app that aims to display some of the best pet pictures on the inter
 * JavaScript 
 * Markup (HTML & CSS)
 
-##Challenges
+## Challenges
 
 * Learning ActiveRecord capabilities and syntax
 * File edits and updates via Sinatra
 * Querying across multiple tables 
 
-##Improvements 
+## Improvements 
 (where do I start)
 
 * To support video uploads 

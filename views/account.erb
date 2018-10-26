@@ -7,17 +7,15 @@
 <div class="account_imgs">
 	<% current_user.animals.each do |animal| %>
 		<div class="account_btn_arrange">
-			<p style="color: white;"><%= animal.name %></p>
-			<form action="/account/<%= animal.id %>/delete" method="post">
+			<p style="font-size: 12px"><%= animal.name %></p>
+		<% animal.media.each do |upload| %>
+			<form action="/account/<%= upload.animal_id %>/edit">
+				<img class="image-edit" src="<%= upload.image %>" alt="">
+			</form>
+			<form action="/account/<%= upload.animal_id %>/delete" method="post">
 				<input type="hidden" name="_method" value="delete">
 				<input type="submit" value="Delete">
 			</form>
-		<% animal.media.each do |upload| %>
-			<div class="edit_image">
-				<form action="/account/<%= upload.animal_id %>/edit">
-					<img class="image-edit" src="<%= upload.image %>" alt="">
-				</form>
-			</div>
 		</div>
 		<% end %>
 	<% end %>

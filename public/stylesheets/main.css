@@ -4,9 +4,8 @@
 }
 
 body {
-	background-color: #D3D3D3;
+	background-color: white;
 	text-align: center;
-/*	background-image: url("http://cdn.onlinewebfonts.com/svg/img_74607.png");*/
 }
 
 .logo {
@@ -15,13 +14,6 @@ body {
     left: 2em;
     width: 130px;
     height: 130px;
-}
-
-.about {
-	text-decoration: none;
-	position: absolute;
-    top: 1em;
-    right: 5em;
 }
 
 .about-para {
@@ -55,10 +47,6 @@ form {
 	font-size: 26px;
 }
 
-.signup {
-	margin-top: 3em;
-}
-
 .signup-btn, .sign-in-btn {
 	width: 6em;
 	margin: 0 auto;
@@ -68,6 +56,7 @@ form {
 	font-size: 16px;
 	transition: .2s ease;
 }
+
 
 .signup-btn:hover, .sign-in-btn:hover, .media-upload-btn:hover, .next-btn:hover  {
 	background-color: salmon;
@@ -90,11 +79,34 @@ form {
 }
 
 
-.back, .account, .pet_creature, .logout, .sign-up, .about {
+.back, .account, .pet_creature, .logout{
 	margin-top: 5em;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 14px;
 }
+
+.sign-up {
+	position: absolute;
+	top: .3em;
+	right: 4em;
+	font-size: 18px;
+}
+
+.sign-up > a{
+	position: absolute;
+	top: 1.5em;
+	right: .5em;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.about {
+	text-decoration: none;
+	position: relative;
+	top: 1em;
+	font-size: 18px;
+}
+
 
 .email-input, .password-input, .pet-name, .species, .media {
 	margin: .7em;
@@ -112,8 +124,8 @@ form {
 	font-size: 40px;
 	text-decoration: none;
 	margin: 80px;
-	color: white;
-	border: 10px solid #D3D3D3;
+	color: black;
+	border: 10px solid white;
 	transition: .2s ease;
 }
 
@@ -145,7 +157,7 @@ form {
 .animal-show {
 	width: 50em;
 	margin: 0 auto;
-	margin-top: 7em;
+	margin-top: 6em;
 	display: flex;
 	justify-content: space-around;
 }
@@ -162,12 +174,14 @@ form {
 }
 
 footer {
-	color: salmon;
-	text-shadow: 10px 10px 40px #aa8d44;
+	color: white;
+	background-color: lightcoral;
+	text-shadow: 10px 5px 40px #700000;
 	font-size: 24px;
-    width: 100%;
-    position:fixed;
-    bottom: 10em;
+    position: fixed;
+    bottom: 11em;
+    left: 1em;
+    right: 1em;
 }
 
 .popular_images {
@@ -185,4 +199,7 @@ footer {
 	width: 10em;
 }
 
+.popular_images > span {
+	align-self: flex-end;
+}
 

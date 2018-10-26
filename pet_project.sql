@@ -6,6 +6,8 @@ CREATE TABLE users(
 	password_digest VARCHAR(10000)
 );
 
+-- add is_verified column
+
 CREATE TABLE animals(
 	user_id INTEGER,
 	id SERIAL PRIMARY KEY,

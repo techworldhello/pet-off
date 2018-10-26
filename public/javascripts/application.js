@@ -15,7 +15,7 @@ logo.addEventListener('click', event => {
 })
 
 // Edit button in accounts page
-const imageEdits = document.querySelector('.edit_image');
+const imageEdits = document.querySelectorAll('.image-edit');
 
 imageEdits.forEach(image => {
 	image.addEventListener('click', event => {

@@ -1,5 +1,7 @@
 # 🐱 Pet Off 🐕
 
+(GA project 2 - my first serverside crud app)
+
 A full stack app that aims to display some of the best pet pictures on the internet as decided by users. 
 
 Check it out here - https://arcane-escarpment-53694.herokuapp.com/

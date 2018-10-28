@@ -18,10 +18,6 @@ Check it out here - https://arcane-escarpment-53694.herokuapp.com/
 * JavaScript 
 * Markup (HTML & CSS)
 
-## Database schema
-
-![Screenshot](public/images/db_wireframes.jpg)
-
 ## Challenges
 
 * Learning ActiveRecord capabilities and syntax
